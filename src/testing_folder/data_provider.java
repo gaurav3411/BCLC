@@ -22,7 +22,7 @@ public class data_provider{
 		int rowcount= sheet.getPhysicalNumberOfRows(); //give number of rows in sheet
 		XSSFRow row= sheet.getRow(0); //give first row which is header
 		int colcount=row.getPhysicalNumberOfCells();
-		//System.out.println(colcount);
+		System.out.println(colcount);
 		Object [][] data= new Object[rowcount-1][colcount];
 		
 		for(int i=0;i<rowcount-1;i++)
