@@ -2,6 +2,7 @@ package Class_file;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,5 +24,24 @@ public class abstract_usable {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
+	
+	public void MFA_handle(WebElement element, WebElement elment2)
+	 {
+		try
+		{
+		if(element.isDisplayed())
+		
+		{driver.switchTo().frame(0);
+		elment2.click();
+			driver.switchTo().defaultContent();
+		}
+		}
+		catch(Exception e)
+		{
+			//e.printStackTrace();
+			System.out.println("NO MFA");
+			
+		}
+	 }
 
 }

@@ -29,14 +29,14 @@ WebElement action_button;
 	public String welcomet_message()
 	{
 		wait_element_visible(action_button, 5);
-		//Thread.sleep(3000);
+		
 		action_button.click();
 		wait_element_visible(welcome, 5);
 		String welcome_m=welcome.getText();
 	
 		return welcome_m;
 				
-		//debit_tile.click();
+		
 	}
 	
 	public String depositmethod_message()
@@ -45,7 +45,7 @@ WebElement action_button;
 		String Deposit_m=Depsoit_message.getText();
 		return Deposit_m;
 				
-		//debit_tile.click();
+		
 	}
 	
 

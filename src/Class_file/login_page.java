@@ -1,10 +1,10 @@
 package Class_file;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 public class login_page extends abstract_usable {
 	WebDriver driver;
@@ -29,11 +29,19 @@ public class login_page extends abstract_usable {
 	
 	@FindBy(xpath="//a[@class='user-controls__button']")
 	WebElement action_button;
-	//@FindBy(xpath="//span[@class='user-session-bar__player-name-text']")
-	//WebElement profilename;
 	
 	@FindBy(xpath="//a[@class='user-session-bar__account-link user-session-bar__account-link_deposit']")
 	WebElement Deposit_button;
+	
+	@FindBy(xpath="//button[text()=\"Skip for now\"]")
+	WebElement skip;
+	
+	@FindBy(xpath="//iframe[@id='login-frame]")
+	WebElement frames;
+	
+	@FindBy(xpath="//a[contains(text(), \"Casino\")]")
+	WebElement casino;
+	
 	
 	public void Enter_username_password(String user, String Pass) throws InterruptedException
 	{
@@ -41,17 +49,29 @@ public class login_page extends abstract_usable {
 		password_field.sendKeys(Pass);
 		login_button.click();
 		driver.switchTo().defaultContent(); //taking out from i frame
-		wait_element_visible(action_button, 0);
-		//Thread.sleep(3000);
+		
+		
+		MFA_handle(frames,skip);
+		
+		
+	
+	}
+	
+	public void navigate_deposit()
+	{
+wait_element_visible(action_button, 5);
+		
+		
 		action_button.click();
 		Deposit_button.click();
-		//profile=profilename.getText();
-		//return profile;
-		
-		
-		
-        
-
+	}
+	
+	public void navigate_casino() throws InterruptedException
+	{
+System.out.println("inside navigate_casino()");
+//Thread.sleep(5000);
+		wait_element_visible(casino, 10);
+		casino.click();
 	}
 
 }

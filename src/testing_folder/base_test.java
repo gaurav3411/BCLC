@@ -24,6 +24,9 @@ public class base_test extends data_provider{
 	public static WebDriver driver;
 	String browsername ;
 	 ExtentReports extent;
+	 
+	 
+	 
 	
 	public String set_property() throws IOException
 	{
@@ -39,6 +42,7 @@ public class base_test extends data_provider{
 	{ String actual_browsername=set_property();
 		if(actual_browsername.equalsIgnoreCase("chrome"))
 		{
+			System.out.println("inside initilization");
 		driver= new ChromeDriver();
 		driver.get("https://qa6.playnow.com/");
 		
@@ -51,6 +55,8 @@ public class base_test extends data_provider{
 	
 	public ExtentReports extent_report()
 	{
+		
+		 System.out.println(testname);
 		Date currentDate = new Date();
 	String dateee= currentDate.toString();;
 	String dateee3=dateee.replace(':', '-');
@@ -63,7 +69,9 @@ public class base_test extends data_provider{
 		 extent= new ExtentReports();
 		  extent.attachReporter(report);
 		  extent.setSystemInfo("Tester", "Gaurav Kumar");
+		  System.out.println("exit extent");
 		return extent;
+		
 	
 		
 	}

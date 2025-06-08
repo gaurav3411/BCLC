@@ -13,12 +13,15 @@ import com.aventstack.extentreports.ExtentTest;
 public class Listners extends base_test implements ITestListener {
 	ExtentTest test;
 	ExtentReports extent=extent_report();
+	
 	@Override
 	public void onTestStart(ITestResult result)
 	{
 		System.out.println("on test start");
 		test=extent.createTest(result.getMethod().getMethodName());
+		testname=result.getMethod().getMethodName();
 		
+		System.out.println(testname);
 	}
 
 	@Override

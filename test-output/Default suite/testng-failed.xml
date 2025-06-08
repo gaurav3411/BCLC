@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testing_folder.regression">
+      <class name="testing_folder.casino_test">
         <methods>
-          <include name="test3"/>
+          <include name="casino_flow" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testing_folder.regression -->
+      </class> <!-- testing_folder.casino_test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -5,15 +5,16 @@
 <listener class-name="testing_folder.Listners"></listener>
 </listeners>
 <test thread-count="5" name="Test add product">
-<parameter name="Test_Paramneter" value="this is parameter from test xml level"></parameter>
+<parameter name="Test_Paramneter" value=""></parameter>
 <groups>
 <run>
 <include name="regression" />
 </run>
 </groups>
     <classes>
-      <class name="testing_folder.regression"/>
-      <class name="testing_folder.smoke"/>
+    
+      <class name="testing_folder.depositflow_debit"/>
+      <class name="testing_folder.casino_test"/>
       
     </classes>
   </test> <!-- Test -->

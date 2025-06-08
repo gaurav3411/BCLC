@@ -5,18 +5,18 @@
     <listener class-name="testing_folder.Listners"/>
   </listeners>
   <test thread-count="5" name="Test add product(failed)">
-    <parameter name="Test Paramneter" value="this is parameter from test xml level"/>
+    <parameter name="Test_Paramneter" value=""/>
     <groups>
       <run>
         <include name="regression"/>
       </run>
     </groups>
     <classes>
-      <class name="testing_folder.regression">
+      <class name="testing_folder.casino_test">
         <methods>
-          <include name="test" invocation-numbers="0"/>
+          <include name="casino_flow" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testing_folder.regression -->
+      </class> <!-- testing_folder.casino_test -->
     </classes>
   </test> <!-- Test add product(failed) -->
 </suite> <!-- Failed suite [Suite] -->
